@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Simple Praytime</string>
+    <string name="act_setup0">Simple PrayTime - First Run</string>
+    <string name="act_setup1">Einrichten 1/3</string>
+    <string name="act_setup2">Einrichten 2/3</string>
+    <string name="act_setup3">Einrichten 3/3</string>
+    <string name="act_pref">Einstellungen</string>
+    <string name="act_calc">Über die Berechnung</string>
+    <string name="act_changelog">Changelog</string>
+    <string name="action_monthly">Monatsansicht</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="action_location">Location</string>
+    <string name="setup0_txt1">Selam Alaykum! \n Erstmal, vielen Dank, dass du dich für meine App entschieden hast! Da dies der erste Start ist, musst du die App einrichten. Das wird im Idealfall weniger als eine Minute in Anspruch nehmen.</string>
+    <string name="setup0_txt2">Los geht\'s!</string>
+    <string name="setup1_txt1">In diesem Schritt wirst du die Latitude und Longitude Koordinaten deiner Position festlegen.Dafür kannst du entweder dein GPS-Modul verwenden oder nach einem Ort suchen.</string>
+    <string name="setup1_txt2">Latitude:</string>
+    <string name="setup1_txt3">Longitude:</string>
+    <string name="setup1_txt4">Suche</string>
+    <string name="setup1_txt5">Suche nach Land, Stadt, Straße, Postleitzahl ..</string>
+    <string name="setup2_txt1">Nun musst du noch die Zeitzone in der du dich befindest festlegen und außerdem deine bevorzugte Berechnungsmethode von der unteren Liste aussuchen.</string>
+    <string name="setup2_txt2">Zeitzone:</string>
+    <string name="setup2_txt3">Berechnung:</string>
+	<string name="methods_prompt">Wähle eine Methode:</string>
+    <string name="timezone_prompt">Wähle eine Zeitzone</string>
+    <string name="action_next">Weiter</string>
+    <string name="nocoordinates">Keine validen Koordinaten!</string>
+    <string name="nomethodechoose">Du musst eine Berechnungsmethode auswählen!</string>
+    <string name="setup3_txt1">Glückwunsch!</string>
+    <string name="setup3_txt2">Die App ist erfolgreich eingerichtet.</string>
+    <string name="setup3_txt3">Schließe den Einrichtungsassistenten</string>
+    <string name="setup3_txt_fail1">Ohh!</string>
+    <string name="setup3_txt_fail2">Etwas lief schief! Ist deine Internverbindung abgeschaltet? Um die Gebetszeiten zu bekommen brauchst du einmalig eine Internetverbindung.</string>
+    <string name="setup3_txt_fail3">Starte den Einrichtungsassistenten erneut</string>
+    <string name="aufbereitet">Daten werden verarbeitet..bitte warten</string>
+    <string name="klickto">Klicke um die Koordinaten zu setzen</string>
+    <string name="action_setup">Einrichten</string>
+    <string name="achtung">Achtung!</string>
+    <string name="datenbestand">Der Datenbestand ist leider abgelaufen und muss für dieses Jahr einmalig aktualisiert</string>
+    <string name="today">Heute ist der </string>
+    <string name="praytimetoday">Die Gebetszeiten für Heute:</string>
+    <string name="nextpraytime">Nächster Gebetszeit in: </string>
+    <string name="noloc">Kein Ort gefunden!</string>
+    <string name="set_sunrise">Sonnenaufgang anzeigen</string>
+    <string name="set_sunset">Sonnenuntergang anzeigen</string>
+    <string name="set_imsaak">Imsaak anzeigen</string>
+    <string name="setabout">Über</string>
+    <string name="setchangelog">Changelog:</string>
+    <string name="setfeedback">Feedback</string>
+    <string name="setrate">Bewerten</string>
+    <string name="setcalc">Berechnung der Gebetszeiten</string>
+    <string name="setspend">Spenderversion kaufen</string>
+	<string name="sunrise">Sonnenaufgang</string>
+	<string name="sunset">Sonnenuntergang</string>
+	<string name="einrichtungsass">Einrichten</string>
+	<string name="einrichtungsasss2">Hier geht es zum Einrichtungsassistenten, wo du dein Ort und die Berechnungart neu einstellen kannst.</string>
+    <string name="widgettitle">Gebetszeiten:</string>
+	
+        
+    
+    
+    <string-array name="methods_arrays">
+        <item>Leva Research Institude, Qom, Iran</item>
+        <item>University of Islamic Sciences, Karachi, Pakistan</item>
+        <item>Islamic Soceity of North America(ISNA), USA</item>
+        <item>Muslim World League (MWL)</item>
+        <item>Umm al-Qura, Makkah, Saudi Arabia</item>
+        <item>Egyptian General Authority</item>
+    </string-array>
+    
+    <string-array name="timezone_arrays">
+        <item>GMT-13:00</item>
+        <item>GMT-12:30</item>
+        <item>GMT-12:00</item>
+        <item>GMT-11:30</item>
+        <item>GMT-11:00</item>
+        <item>GMT-10:30</item>
+        <item>GMT-10:00</item>
+        <item>GMT-09:30</item>
+        <item>GMT-09:00</item>
+        <item>GMT-08:30</item>
+        <item>GMT-08:00</item>
+        <item>GMT-07:30</item>
+        <item>GMT-07:00</item>
+        <item>GMT-06:30</item>
+        <item>GMT-06:00</item>
+        <item>GMT-05:30</item>
+        <item>GMT-05:00</item>
+        <item>GMT-04:30</item>
+        <item>GMT-04:00</item>
+        <item>GMT-03:30</item>
+        <item>GMT-03:00</item>
+        <item>GMT-02:30</item>
+        <item>GMT-02:00</item>
+        <item>GMT-01:30</item>
+        <item>GMT-01:00</item>
+        <item>GMT-00:30</item>
+        <item>GMT</item>
+        <item>GMT+00:30</item>
+        <item>GMT+01:00</item>
+        <item>GMT+01:30</item>
+        <item>GMT+02:00</item>
+        <item>GMT+02:30</item>
+        <item>GMT+03:00</item>
+        <item>GMT+03:30</item>
+        <item>GMT+04:00</item>
+        <item>GMT+04:30</item>
+        <item>GMT+05:00</item>
+        <item>GMT+05:30</item>
+        <item>GMT+06:00</item>
+        <item>GMT+06:30</item>
+        <item>GMT+07:00</item>
+        <item>GMT+07:30</item>
+        <item>GMT+08:00</item>
+        <item>GMT+08:30</item>
+        <item>GMT+09:00</item>
+        <item>GMT+09:30</item>
+        <item>GMT+10:00</item>
+        <item>GMT+10:30</item>
+        <item>GMT+11:00</item>
+        <item>GMT+11:30</item>
+        <item>GMT+12:00</item>
+        <item>GMT+12:30</item>
+        <item>GMT+13:00</item>
+
+    </string-array>
+    
+</resources>

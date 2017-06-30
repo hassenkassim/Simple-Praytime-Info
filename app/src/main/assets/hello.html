@@ -1,0 +1,250 @@
+<h1>PrayTime's Calculation</h1>
+<h3>Contents</h3>
+<p>
+<ol>
+<li><a href="#Introduction">Introduction</a></li>
+<li><a href="#Solar">Astronomical Measures</a></li>
+<li><a href="#Calculation">Calculating Prayer Times</a>
+	<ol>
+		<li><a href="#Dhuhr">Dhuhr</a></li>
+		<li><a href="#Sunrise-Sunset">Sunrise and Sunset</a></li>
+		<li><a href="#Fajr-Isha">Fajr and Isha</a></li>
+		<li><a href="#Asr">Asr</a></li>
+		<li><a href="#Maghrib">Maghrib</a></li>
+	</ol>
+</li>
+<li><a href="#HighLats">Adjustments for Higher Latitudes</a></li>
+<li><a href="#References">References</a></li>
+</ol>
+</p>
+
+    <!-- Introduction -->
+
+<a name="Introduction"></a>
+<h2>Introduction</h2>
+
+<p>
+Muslims are supposed to perform five prayers every day. 
+Each prayer is given a certain prescribed time in which it must be performed. 
+</p>
+<p>
+To determine the exact time period for each prayer, we need to determine seven points of time per a day. 
+These times are defined in the table below:
+</p>
+
+<table border="1">
+<tr> <td> Time </td><td> Definition  </td></tr>	
+<tr><td> Fajr  </td><td> When the sky begins to lighten, some time before the sun itself appears. </td></tr>
+<tr><td> Sunrise </td><td> The time at which the first part of the sun appears above the horizon. </td></tr>
+<tr><td> Dhuhr  </td><td> When the sun appears the highest in the sky during its journey from sunrise to sunset.</td></tr>
+<tr><td> Asr  </td><td> The time when the length of any object's shadow equals the length (or twice the length) of the object itself plus the length of that object's shadow at noon. </td></tr>
+<tr><td> Sunset </td><td> The time at which the sun disappears below the horizon. </td></tr>
+<tr><td> Maghrib&nbsp;</td><td> Soon after the sunset. </td></tr>
+<tr><td> Isha  </td><td> The time at which darkness falls and there is no scattered light in the sky. </td></tr>
+</table>
+<br>
+
+<p>
+The above seven times can be calculated mathematically for any location if the latitude and longitude of the location are known.
+</p>
+    <!-- Astronomical Measures -->
+
+<a name="Solar"></a>
+<h2>Astronomical Measures</h2>
+
+<p>
+There are two astronomical measures that are essential for computing prayer times. These two measures are the <em>equation of time</em> and the <em>declination of the Sun</em>. 
+</p>
+
+<p>
+The equation of time is the difference between time as read from a sundial and a clock. 
+It results from an apparent irregular movement of the Sun caused by a combination of the obliquity of the Earth's rotation axis and the eccentricity of its orbit.
+The sundial can be ahead (fast) by as much as 16 min 33 s (around November 3) or fall behind by as much as 14 min 6 s (around February 12). 
+</p>
+
+<div align="center">
+	<img src="images/Equation_of_time3.png" border="0" height="295" alt="Equation of Time">
+	<br><b>The Equation of Time</b>
+</div>
+
+<p>
+The declination of the Sun is the angle between the rays of the sun and the plane of the earth equator. 
+The declination of the Sun changes continuously throughout the year. This is a consequence of the Earth's tilt, i.e. the difference in its rotational and revolutionary axes. 
+</p> 
+
+<div align="center">
+	<img src="images/declination.gif" border="0" height="212" alt="Declination of the Sun">
+	<br><b>The Declination of the Sun</b>
+</div>
+
+<p>
+The above two astronomical measures can be obtained accurately  
+from The Star Almanac, or can be calculated approximately.
+In PrayTime, we have used an algorithm from <a href="http://aa.usno.navy.mil/faq/docs/SunApprox.html">U.S. Naval Observatory</a> that computes the Sun's angular coordinates to an accuracy of about 1 arcminute within two centuries of 2000. Details of this approximation algorithm can be found below. 
+</p>
+
+<p>
+<pre>  
+   d = jd - 2451545.0;  // jd is the given Julian date 
+
+   g = 357.529 + 0.98560028* d;
+   q = 280.459 + 0.98564736* d;
+   L = q + 1.915* sin(g) + 0.020* sin(2*g);
+
+   R = 1.00014 - 0.01671* cos(g) - 0.00014* cos(2*g);
+   e = 23.439 - 0.00000036* d;
+   RA = arctan2(cos(e)* sin(L), cos(L))/ 15;
+
+   D = arcsin(sin(e)* sin(L));  // declination of the Sun
+   EqT = q/15 - RA;  // equation of time
+
+</pre>
+</p>
+
+    <!-- Calculating Prayer Times -->
+
+<a name="Calculation"></a>
+<h2>Calculating Prayer Times</h2>
+
+<p>
+To calculate the prayer times for a given location, we need to know the latitude (L) and the longitude (Lng) of the location, along with the local TimeZone for that location. 
+We also obtain the equation of time (EqT) and the declination of the Sun (D) for a given date using the algorithm mentioned in the previous section.
+</p>
+
+
+<a name="Dhuhr"></a>
+<h3>Dhuhr</h3>
+
+<p>
+Dhuhr (mid-day) can be calculated easily using the following formula: 
+</p>
+<div class="formula">
+	Dhuhr = 12 + TimeZone + Lng/15 - EqT/60.
+</div>
+
+
+<a name="Sunrise-Sunset"></a>
+<h3>Sunrise and Sunset</h3>
+
+<p>
+The time difference between the mid-day and the time at which sun reaches an angle <em>a</em> below the horizon can be computed using the following formula: 
+</p>
+<div class="formula">
+	<img src="images/time-formula.gif" border="0" height="43" alt="Time Formula">
+</div>
+
+<p>
+Astronomical sunrise and sunset occur at a=0.
+However, due to the refraction of light by terrestrial atmosphere, actual sunrise appears slightly before
+astronomical sunrise and actual sunset occurs after astronomical sunset.
+Actual sunrise and sunset can be computed using the following formulas:
+</p>
+
+<div class="formula">
+	Sunrise = Dhuhr - T(0.8333), <br>
+	Sunset = Dhuhr + T(0.8333). 
+</div>
+
+
+<a name="Fajr-Isha"></a>
+<h3>Fajr and Isha</h3>
+
+<p>
+There are differing opinions on what angle to use to calculate Fajr and Isha. 
+The following table shows several conventions for calculating Fajr and Isha currently in
+use in various countries:
+</p>
+
+<table border="1">
+<tr> <td> Convention </td><td> Fajr Angle </td><td> Isha Angle  </td></tr>	
+<tr><td> Leva Research Institute, Qom, Iran* </td><td> 16 </td><td> 14 </td></tr>
+<tr><td> University of Islamic Sciences, Karachi </td><td> 18 </td><td> 18 </td></tr>
+<tr><td> Islamic Society of North America (ISNA), USA </td><td> 15 </td><td> 15 </td></tr>
+<tr><td> Muslim World League (MWL)	</td><td> 18 </td><td> 17 </td></tr>
+<tr><td> Umm al-Qura, Makkah, Saudi Arabia </td><td> 19 </td><td> 90 mins after Maghrib </td></tr>
+<tr><td> Egyptian General Authority of Survey </td><td> 19.5 </td><td> 17.5 </td></tr>
+</table>
+
+<p>* Leva Research Institute (L.R.I.) is a religious research center established in 1993 in Qom, Iran</p>
+<p>
+For example, according to L.R.I's convention, Fajr = Dhuhr - T(16), 
+and Isha = Dhuhr + T(14).
+</p>
+
+<a name="Asr"></a>
+<h3>Asr</h3>
+
+<p>
+There are two main opinions on how to calculate Asr time.
+The majority of schools (including Maliki, Shafi'i, and Hanbali) say it is at the time when the length of any object's shadow equals the length of the object itself plus the length of that object's shadow at noon. 
+The dominant opinion in the Hanafi school says it begins when the length of any object's shadow is twice the length of the object plus the length of that object's shadow at noon.
+</p>
+
+<p>
+The following formula computes the time difference between the mid-day and the time at which the object's shadow 
+equals <em>k</em> times the length of the object itself plus the length of that object's shadow at noon:
+</p>
+<div class="formula">
+	<img src="images/asr-formula.gif" border="0" height="43" alt="Asr Formula">
+</div>
+
+<p>
+Thus, in the standard juristic method, Asr = Dhuhr + A(1), and in Hanafi's juristic method, Asr = Dhuhr + A(2).
+</p>
+
+<a name="Maghrib"></a>
+<h3>Maghrib</h3>
+
+<p>
+In the Sunni's point of view, the time for Maghrib prayer begins once the Sun has completely set beneath the horizon (i.e., Maghrib = Sunset). 
+In the Shia's view, however, the obligatory precaution is that as long as the redness in the eastern sky appearing after sunset has not passed overhead, Maghrib prayer should not be performed. It is usually taken into consideration by assuming a twilight angle of 4 for Maghrib, i.e., Maghrib = Dhuhr + T(4).
+</p>
+
+    <!-- Higher Laitudes -->
+
+<a name="HighLats"></a>
+<h2>Adjustments for Higher Latitudes</h2>
+
+<p>
+In locations at higher latitude, twilight may persist throughout the night during some months of the year. 
+In these abnormal periods, the determination of Fajr and Isha is not possible using the usual formulas mentioned in the previous section.
+To overcome this problem, several solutions have been proposed, three of which are described below.
+</p>
+
+<ul>
+<li> <b>Middle of the Night</b>: 
+This principle is due to the latter jurists. 
+The period from sunset to sunrise is divided into two halves. 
+The first half is considered to be the "night" and the other half as "day break". 
+Fajr and Isha in this method are assumed to be at mid-night during the abnormal periods. 
+
+<li> <b>One-Seventh of the Night</b>: 
+This principle is again attributed to recent jurists. 
+The period between sunset and sunrise is divided into seven parts.
+Isha begins after the first one-seventh part, and Fajr is at the beginning of 
+the seventh part.
+
+<li> <b>Angle-Based Method</b>: 
+This is an intermediate solution, used by some recent prayer time calculators. 
+Let <em>a</em> be the twilight angle for Isha, and let t = <em>a</em>/60.
+The period between sunset and sunrise is divided into t parts.
+Isha begins after the first part. For example, if the twilight angle for Isha is 15,
+then Isha begins at the end of the first quarter (15/60) of the night.
+Time for Fajr is calculated similarly.
+</ul>
+
+<p>
+In case Maghrib is not equal to Sunset, we can apply the above rules to Mghrib as well to make sure that Maghrib always falls between Sunset and Isha during the abnormal periods.
+</p>
+
+    <!-- References -->
+<a name="References"></a>
+<h2>References</h2>
+ 
+<p>
+<li> <a href="http://www.ummah.net/astronomy/saltime">The Determination of Salat Times</a>, by Dr. Monzur Ahmed.
+<li> <a href="http://aa.usno.navy.mil/faq/docs/SunApprox.html">Approximate Solar Coordinates</a>, by U.S. Naval Observatory.
+<li> <a href="http://www.jas.org.jo/muneer/">The Islamic Prayer Times</a>, by Professor Tariq Muneer.
+<li> <a href="http://en.wikipedia.org/">Wikipedia</a>, the free encyclopedia.
+</p>
+

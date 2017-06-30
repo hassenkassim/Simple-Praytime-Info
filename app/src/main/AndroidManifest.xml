@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.simplepraytimeinfofree"
+    android:versionCode="3"
+    android:versionName="1.2" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Permission to start Alarm on device reboot -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.SimplePrayTimeInfo.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.SimplePrayTimeInfo.MonthlyActivity" android:theme="@android:style/Theme.Holo.Light" ></activity>
+        <activity android:name="com.SimplePrayTimeInfo.Setup.Setup3Activity" android:theme="@android:style/Theme.Holo.Light" android:label="@string/act_setup3" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.SimplePrayTimeInfo.Setup.Setup2Activity" android:theme="@android:style/Theme.Holo.Light" android:label="@string/act_setup2" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.SimplePrayTimeInfo.Setup.Setup1Activity" android:theme="@android:style/Theme.Holo.Light" android:label="@string/act_setup1" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.SimplePrayTimeInfo.Setup.Setup0Activity" android:theme="@android:style/Theme.Holo.Light" android:label="@string/act_setup0" android:screenOrientation="portrait"></activity>
+        <activity android:name="com.SimplePrayTimeInfo.Calculation_Activity" android:theme="@android:style/Theme.Holo.Light" android:label="@string/act_calc"></activity>
+        <activity android:name="com.SimplePrayTimeInfo.Prefs.Changelog_Activity" android:theme="@android:style/Theme.Holo.Light" android:label="@string/act_changelog"></activity>
+        <activity android:name="com.SimplePrayTimeInfo.Prefs.Prefs_Activity" android:theme="@android:style/Theme.Holo.Light" android:label="@string/act_pref"></activity>
+        <activity android:name="com.SimplePrayTimeInfo.Qibla_ActivityQibla" android:theme="@android:style/Theme.Holo.Light" android:label="Qibla"></activity>
+        
+        <receiver android:name="com.SimplePrayTimeInfo.Widget.PraytimeWidget" android:label="Praytime Widget">
+            <intent-filter > <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/></intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                 android:resource="@xml/widget_provider" />
+            
+        </receiver>
+
+        <!-- Will not be called unless the application explicitly enables it -->
+        <receiver android:name="com.SimplePrayTimeInfo.Alarm.DeviceBootReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.SimplePrayTimeInfo.Alarm.AlarmReceiver" >
+        </receiver>
+        <receiver android:name="com.SimplePrayTimeInfo.Alarm.NotifyReceiver" >
+        </receiver>
+        
+        
+        </application>
+
+</manifest>

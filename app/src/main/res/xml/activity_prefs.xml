@@ -1,0 +1,113 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent">
+
+
+    <PreferenceCategory android:title="Einrichtung" >
+        <Preference
+            android:key="setup"
+            android:title="@string/einrichtungsass"
+            android:summary="@string/einrichtungsasss2"
+            />
+    </PreferenceCategory>
+
+
+
+  	<PreferenceCategory android:title="Anzeige">
+        <ListPreference
+            android:key="set_schriftgroesse"
+            android:title="Schriftgröße"
+            android:entries="@array/schriftgroesse_entries"
+            android:entryValues="@array/schriftgroesse_values"
+            android:defaultValue="12"/>
+        <CheckBoxPreference
+            android:key="set_imsaak"
+            android:title="@string/set_imsaak" />
+        <CheckBoxPreference
+            android:key="set_sunrise"
+            android:title="@string/set_sunrise" />
+
+                <CheckBoxPreference
+            android:key="set_sunset"
+            android:title="@string/set_sunset" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Benachrichtigung">
+
+        <CheckBoxPreference
+            android:key="set_ben_aktiv"
+            android:title="Benachrichtigungen" />
+        <CheckBoxPreference
+            android:key="set_tone_fajr"
+            android:title="Fajr"
+            android:dependency="set_ben_aktiv"/>
+        <CheckBoxPreference
+            android:key="set_tone_dhuhr"
+            android:title="Dhuhr"
+            android:dependency="set_ben_aktiv"/>
+        <CheckBoxPreference
+            android:key="set_tone_asr"
+            android:title="Asr"
+            android:dependency="set_ben_aktiv"/>
+        <CheckBoxPreference
+            android:key="set_tone_maghrib"
+            android:title="Maghrib"
+            android:dependency="set_ben_aktiv"/>
+        <CheckBoxPreference
+            android:key="set_tone_isha"
+            android:title="Isha"
+            android:dependency="set_ben_aktiv"/>
+        <CheckBoxPreference
+            android:key="set_tone"
+            android:title="Ton abspielen"
+            android:dependency="set_ben_aktiv"/>
+        <ListPreference
+            android:key="set_tone_adhan"
+            android:title="Adhan auswählen"
+            android:summary="Du kannst zwischen mehreren Adhan-Rufe auswählen"
+            android:dependency="set_tone"
+            android:entries="@array/adhan_entries"
+            android:entryValues="@array/adhan_values"
+            android:defaultValue="adhan1"/>
+        <CheckBoxPreference
+            android:key="set_vibration"
+            android:title="Vibration"
+            android:dependency="set_ben_aktiv"
+            android:summary="Handy vibrieren bei Benachrichtigung"/>
+        <ListPreference
+            android:key="set_vibration_time"
+            android:title="Vibrationszeitpunkt"
+            android:summary="Zeit vor der Gebetszeit, bevor der Adhan abgespielt wird"
+            android:dependency="set_vibration"
+            android:entries="@array/vibrationszeitpunkt_entries"
+            android:entryValues="@array/vibrationszeitpunkt_values"
+            android:defaultValue="0"/>
+
+    </PreferenceCategory>
+
+ <PreferenceCategory android:title="@string/setabout" >
+                <Preference  
+            android:key="changelog" 
+            android:title="@string/setchangelog"
+            android:summary="Aktuell: Version 1.1."/>
+                
+                               <Preference  
+            android:key="set_calculation" 
+            android:title="@string/setcalc" />
+                
+        <Preference  
+            android:key="feedback" 
+            android:title="@string/setfeedback"
+            android:summary="Sende Kommentare, Ideen oder Fehlermeldungen an den Entwickler"/>
+
+        <Preference
+            android:key="bewerten"
+            android:summary="Wenn dir Simple Praytime Info gefällt dann gebe bitte ein Bewertung ab. Danke!"
+            android:title="@string/setrate" />
+        
+
+        
+    </PreferenceCategory>
+
+</PreferenceScreen>

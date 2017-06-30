@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <issue id="CutPasteId">
+        <ignore path="src/com/simplepraytimeinfo/Setup1Activity.java" />
+    </issue>
+    <issue id="NewApi">
+        <ignore path="src/com/simplepraytimeinfofree/MainActivity.java" />
+    </issue>
+</lint>

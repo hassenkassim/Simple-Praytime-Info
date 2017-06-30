@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/setup2textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="@string/setup2_txt1"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/setup2textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/setup2textView1"
+        android:padding="10dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/setup2_txt2"/>
+    <Spinner
+        android:id="@+id/setup2spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/setup2textView2"
+        android:layout_alignBaseline="@id/setup2textView2"
+        android:padding="2dp"
+        
+        android:entries="@array/timezone_arrays"
+        android:prompt="@string/timezone_prompt"
+        android:spinnerMode="dropdown"
+         />
+    
+        <TextView
+        android:id="@+id/setup2textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/setup2textView2"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/setup2_txt3"/>
+    <Spinner
+        android:id="@+id/setup2spinner2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/setup2textView3"
+        android:padding="2dp"
+        
+        android:entries="@array/methods_arrays"
+        android:prompt="@string/methods_prompt"
+        android:spinnerMode="dropdown"
+         />
+
+</RelativeLayout>

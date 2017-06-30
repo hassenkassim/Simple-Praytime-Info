@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Simple Praytime</string>
+    <string name="act_setup0">Simple PrayTime - First Run</string>
+    <string name="act_setup1">Setup 1/3</string>
+    <string name="act_setup2">Setup 2/3</string>
+    <string name="act_setup3">Setup 3/3</string>
+    <string name="act_pref">Preferences</string>
+    <string name="act_calc">About calculation</string>
+    <string name="act_changelog">Changelog</string>
+    <string name="action_monthly">Monthly</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_location">Location</string>
+    <string name="setup0_txt1">Selam Alaykum! \n First of all, thank you for choosing my application. This is the first run, so please carefully follow these steps to setup the application correctly. It will take you less than a minute.</string>
+    <string name="setup0_txt2">Let\'s start!</string>
+    <string name="setup1_txt1">In this step you are going to get the latitude and the longitude coordinates of your current position. Therefore you either try to get the data from your gps module or you can also search for a location.</string>
+    <string name="setup1_txt2">Latitude:</string>
+    <string name="setup1_txt3">Longitude:</string>
+    <string name="setup1_txt4">Search</string>
+    <string name="setup1_txt5">Search for Country, City, Street, Postal Code ..</string>
+    <string name="setup2_txt1">Now, you have to choose your preferred calculation methode and the time zone from the lists below.</string>
+    <string name="setup2_txt2">Timezone:</string>
+    <string name="setup2_txt3">Calculation:</string>
+	<string name="methods_prompt">Choose a method</string>
+    <string name="timezone_prompt">Choose your timezone</string>
+    <string name="action_next">Next</string>
+    <string name="nocoordinates">No valid coordinates!</string>
+    <string name="nomethodechoose">You have to select a calculation method!</string>
+    <string name="setup3_txt1">Congratulations!</string>
+    <string name="setup3_txt2">The application is now set up successfully.</string>
+    <string name="setup3_txt3">Close the setup</string>
+    <string name="setup3_txt_fail1">Ohh!</string>
+    <string name="setup3_txt_fail2">Something went wrong. Maybe you don\'t have a internet connection? You have to turn on your internet connection on in order to get the praying times.</string>
+    <string name="setup3_txt_fail3">Start the setup again</string>
+    <string name="aufbereitet">Data are processing..please wait</string>
+    <string name="klickto">Click to set the coordinates</string>
+    <string name="action_setup">Setup</string>
+    <string name="achtung">Attention!</string>
+    <string name="datenbestand">The dataset is unfortunately expired and must be updated for this year</string>
+    <string name="today">Today is the </string>
+    <string name="praytimetoday">Praytimes for today:</string>
+    <string name="nextpraytime">Next praytime in: </string>
+    <string name="noloc">No location found!</string>
+    <string name="set_sunrise">Show Sunrise</string>
+    <string name="set_sunset">Show Sunset</string>
+    <string name="set_imsaak">Show Imsaak</string>
+    <string name="setabout">About</string>
+    <string name="setchangelog">Changelog:</string>
+    <string name="setfeedback">Feedback</string>
+    <string name="setrate">Rate this App!</string>
+    <string name="setcalc">Praytime\'s Calculation</string>
+    <string name="setspend">Buy Donater Version</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="sunset">Sunset</string>
+    <string name="einrichtungsass">Setup</string>
+	<string name="einrichtungsasss2">Opens the setup assistant where you can adjust your location and the calculation mode.</string>
+	<string name="widgettitle">Prayingtimes:</string>
+    
+    <string-array name="methods_arrays">
+        <item>Leva Research Institude, Qom, Iran</item>
+        <item>University of Islamic Sciences, Karachi, Pakistan</item>
+        <item>Islamic Soceity of North America(ISNA), USA</item>
+        <item>Muslim World League (MWL)</item>
+        <item>Umm al-Qura, Makkah, Saudi Arabia</item>
+        <item>Egyptian General Authority</item>
+    </string-array>
+    
+    <string-array name="timezone_arrays">
+        <item>GMT-13:00</item>
+        <item>GMT-12:30</item>
+        <item>GMT-12:00</item>
+        <item>GMT-11:30</item>
+        <item>GMT-11:00</item>
+        <item>GMT-10:30</item>
+        <item>GMT-10:00</item>
+        <item>GMT-09:30</item>
+        <item>GMT-09:00</item>
+        <item>GMT-08:30</item>
+        <item>GMT-08:00</item>
+        <item>GMT-07:30</item>
+        <item>GMT-07:00</item>
+        <item>GMT-06:30</item>
+        <item>GMT-06:00</item>
+        <item>GMT-05:30</item>
+        <item>GMT-05:00</item>
+        <item>GMT-04:30</item>
+        <item>GMT-04:00</item>
+        <item>GMT-03:30</item>
+        <item>GMT-03:00</item>
+        <item>GMT-02:30</item>
+        <item>GMT-02:00</item>
+        <item>GMT-01:30</item>
+        <item>GMT-01:00</item>
+        <item>GMT-00:30</item>
+        <item>GMT</item>
+        <item>GMT+00:30</item>
+        <item>GMT+01:00</item>
+        <item>GMT+01:30</item>
+        <item>GMT+02:00</item>
+        <item>GMT+02:30</item>
+        <item>GMT+03:00</item>
+        <item>GMT+03:30</item>
+        <item>GMT+04:00</item>
+        <item>GMT+04:30</item>
+        <item>GMT+05:00</item>
+        <item>GMT+05:30</item>
+        <item>GMT+06:00</item>
+        <item>GMT+06:30</item>
+        <item>GMT+07:00</item>
+        <item>GMT+07:30</item>
+        <item>GMT+08:00</item>
+        <item>GMT+08:30</item>
+        <item>GMT+09:00</item>
+        <item>GMT+09:30</item>
+        <item>GMT+10:00</item>
+        <item>GMT+10:30</item>
+        <item>GMT+11:00</item>
+        <item>GMT+11:30</item>
+        <item>GMT+12:00</item>
+        <item>GMT+12:30</item>
+        <item>GMT+13:00</item>
+
+    </string-array>
+    
+</resources>

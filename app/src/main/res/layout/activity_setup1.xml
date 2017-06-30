@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?><RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/setup1textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="@string/setup1_txt1"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/setup1textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/setup1textView1"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/setup1_txt2"
+        />
+
+    <EditText
+        android:id="@+id/setup1editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/setup1textView2"
+        android:layout_alignBottom="@+id/setup1textView2"
+        android:layout_toRightOf="@+id/setup1textView2"
+        android:width="100dp"
+        android:textSize="12sp"
+        android:ems="10"
+        android:hint=""
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
+    
+        <TextView
+        android:id="@+id/setup1textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:layout_alignBaseline="@+id/setup1editText1"
+        android:layout_alignBottom="@+id/setup1editText1"
+        android:layout_toRightOf="@+id/setup1editText1"
+        android:text="@string/setup1_txt3"/>
+
+    <EditText
+        android:id="@+id/setup1editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/setup1textView3"
+        android:layout_alignBottom="@+id/setup1textView3"
+        android:layout_toRightOf="@+id/setup1textView3"
+        android:width="100dp"
+        android:textSize="12sp"
+        android:ems="10"
+        android:hint=""
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
+    
+        <EditText
+        android:id="@+id/setup1editText3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/setup1textView2"
+        android:layout_marginTop="10dp"
+        android:singleLine="true"
+        android:hint="@string/setup1_txt5"  >
+
+        <requestFocus />
+    </EditText>
+
+
+            <ListView
+        android:id="@+id/listView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/setup1editText3">
+    </ListView>
+</RelativeLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:id="@+id/widgetview"
+     >
+
+    <TextView
+        android:id="@+id/widget_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/widgettitle"
+		android:layout_centerInParent="true"
+		android:layout_alignParentTop="true"
+     />
+        <TextView
+        android:id="@+id/widget_textview2"
+        android:layout_below="@id/widget_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fajr: "
+        android:layout_gravity="center_horizontal|center"
+        
+     />
+        <TextView
+        android:id="@+id/widget_textview3"
+        android:layout_below="@id/widget_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=".."
+		android:layout_alignParentRight="true"		
+     />
+        
+                <TextView
+        android:id="@+id/widget_textview4"
+        android:layout_below="@id/widget_textview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dhuhr: "
+        android:layout_gravity="center_horizontal|center"
+     />
+        <TextView
+        android:id="@+id/widget_textview5"
+		android:layout_alignParentRight="true"		
+        android:layout_below="@id/widget_textview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=".."
+        android:layout_gravity="center_horizontal|center"
+     />
+                <TextView
+        android:id="@+id/widget_textview6"
+        android:layout_below="@id/widget_textview4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Asr: "
+        android:layout_gravity="center_horizontal|center"
+     />
+        <TextView
+        android:id="@+id/widget_textview7"
+		android:layout_alignParentRight="true"		
+        android:layout_below="@id/widget_textview4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=".."
+        android:layout_gravity="center_horizontal|center"
+     />
+                <TextView
+        android:id="@+id/widget_textview8"
+        android:layout_below="@id/widget_textview6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Maghrib: "
+        android:layout_gravity="center_horizontal|center"
+     />
+        <TextView
+        android:id="@+id/widget_textview9"
+		android:layout_alignParentRight="true"		
+        android:layout_below="@id/widget_textview6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=".."
+        android:layout_gravity="center_horizontal|center"
+     />
+                <TextView
+        android:id="@+id/widget_textview10"
+        android:layout_below="@id/widget_textview8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Isha: "
+        android:layout_gravity="center_horizontal|center"
+     />
+        <TextView
+        android:id="@+id/widget_textview11"
+		android:layout_alignParentRight="true"		
+        android:layout_below="@id/widget_textview8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=".."
+        android:layout_gravity="center_horizontal|center"
+     />
+        
+        
+</RelativeLayout>

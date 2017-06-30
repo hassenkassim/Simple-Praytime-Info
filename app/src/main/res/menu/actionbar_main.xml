@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+   <item
+        android:id="@+id/action_monthly"
+        android:showAsAction="always"
+        android:title="@string/action_monthly"
+        android:icon="@drawable/ic_action_go_to_today"/>   
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
+    
+       <item
+        android:id="@+id/action_qibla"
+        android:showAsAction="never"
+        android:title="Qibla"/>
+
+    <item
+        android:id="@+id/action_Alarm"
+        android:showAsAction="never"
+        android:title="SetAlarm"/>
+
+    <item
+        android:id="@+id/action_UnAlarm"
+        android:showAsAction="never"
+        android:title="UnSetAlarm"/>
+
+
+
+
+
+
+
+</menu>
